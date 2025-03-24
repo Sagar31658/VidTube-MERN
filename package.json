@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "backend refresher full end to end",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Sagar31658/VidTube-MERN/issues"
   },
-  "homepage": "https://github.com/Sagar31658/VidTube-MERN#readme"
+  "homepage": "https://github.com/Sagar31658/VidTube-MERN#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
