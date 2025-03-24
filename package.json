@@ -1,0 +1,24 @@
+{
+  "name": "vidtube-mern",
+  "version": "1.0.0",
+  "description": "backend refresher full end to end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sagar31658/VidTube-MERN.git"
+  },
+  "keywords": [
+    "mern",
+    "backend",
+    "node"
+  ],
+  "author": "Sagar Parmar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sagar31658/VidTube-MERN/issues"
+  },
+  "homepage": "https://github.com/Sagar31658/VidTube-MERN#readme"
+}
