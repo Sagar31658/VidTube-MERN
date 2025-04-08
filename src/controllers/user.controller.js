@@ -184,4 +184,33 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     }
 })
 
-export {registerUser, loginUser, logoutUser, refreshAccessToken};
+const resetPassword = asyncHandler (async (req, res) => {
+    const {oldPassword, newPassword} = req.body
+    console.log(oldPassword,newPassword)
+    console.log(req.user)
+    const user = await User.findById(req.user._id)
+    const isPasswordCorrect = await user.isPasswordCorrect(oldPassword)
+
+    if(!isPasswordCorrect){
+        throw new ApiError(401, "Old Password is Incorrect")
+    }
+
+    if(oldPassword == newPassword){
+        throw new ApiError(401, "Old and New Passwords can't be Same")
+    }
+
+    user.password = newPassword
+    await user.save({validateBeforeSave: false})
+
+    return res.status(200).json(
+        new ApiResponse("Password Reset Successfully!", {}, 200)
+    )
+})
+
+const getCurrentUser = asyncHandler( async (req,res) => {
+    return res.status(200).json(
+        new ApiResponse("Current User Details: ", req.user, 200)
+    )
+})
+
+export {registerUser, loginUser, logoutUser, refreshAccessToken, resetPassword, getCurrentUser};
